@@ -155,9 +155,10 @@ function setMax() {
 
 
 
-$("#h1Toggle").on("dbclick", function() {
-    $(".ToggleShow").toggleClass("highlight");
+$("#h1Toggle").on("dblclick", function() {
+    $(".ToggleShow").toggle();
 });
+
 
 function Chon3O() {
     $('#chk2O').prop('checked', false);
