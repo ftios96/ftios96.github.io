@@ -2,241 +2,140 @@
 <html>
 
 <head>
-    <title>HACO PHARMA - QUAY SỐ TRÚNG THƯỞNG</title>
-    <link rel="icon" href="logo.png" sizes="32x32" />
+    <title>HACO PHARMA - Quay số trúng thưởng</title>
+     <link rel="icon" href="logo.png" sizes="32x32" />
     <link rel="icon" href="logo.png" sizes="192x192" />
     <link rel="apple-touch-icon" href="logo.png" />
-    <style>
-        html {
-            background-color: chartreuse;
-            border-color: 1px solid;
-        }
-        
-        .container {
-            text-align: center;
-            top: 40%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            position: absolute;
-        }
-        
-        button {
-            display: inline-block;
-            padding: 15px 25px;
-            font-size: 2.5rem;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            outline: none;
-            color: #fff;
-            background-color: #4CAF50;
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 9px #999;
-            font-family: monospace;
-        }
-        
-        button:hover {
-            background-color: #3e8e41
-        }
-        
-        button:active {
-            background-color: #3e8e41;
-            box-shadow: 0 5px #666;
-            transform: translateY(4px);
-        }
-        
-        p {
-            font-size: 25px;
-            /* font-family: monospace; */
-        }
-        
-        #randomNumber {
-            font-size: 20rem;
-        }
-        
-        #randomNumber {
-            width: 30rem;
-            height: 30rem;
-            line-height: 30rem;
-            -webkit-border-radius: 50%;
-            -moz-border-radius: 50%;
-            border-radius: 50%;
-            background-clip: padding-box;
-            font-weight: 700;
-            text-align: center;
-            background-color: #fff;
-            -webkit-box-shadow: 0 0 1.25rem #ccc inset;
-            -moz-box-shadow: 0 0 1.25rem #ccc inset;
-            box-shadow: 0 0 1.25rem #ccc inset;
-            border: 1px solid #999;
-            color: #000;
-            display: inline-block;
-            padding: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
-    <center>
+    <section style="position: fixed;bottom: 0; right: 0;">
+        <h1 id="h1Toggle" class="top-title" style="font-size: 10px;color: #d9a60c;">⚙</h1>
+    </section>
+    <section class="banner-section">
         <div class="container">
-            <p> </p>
-            <p> <span id="randomNumber">  0  </span> </p>
-            <button onclick="generateRandom()">Quay</button>
-        </div>
-        <input style="display: none;" type="number" name="num1" id="num1" value=1 class="form-control" placeholder="min" max=999999 onfocusout="setMax()">
-        <input style="display: none;" type="number" name="num2" id="num2" value=100 class="form-control" placeholder="min" max=999999 onfocusout="setMax()">
-        <script>
-            // function generateNumber() {
-            //     for (let index = 0; index <= 30; index++) {
+            <div class="row" style="margin-top: -8%;">
+                <div class="col-lg-5">
+                    <div class="banner-content" style="padding-bottom: 0px;">
+                        <h1 id="h1Toggle" class="top-title" style="font-size: 40px;color: #d9a60c; display: none;">Quay Số Ngẫu Nhiên</h1>
+                        <h3 class="title" style="font-size: 20px; display: none;">Công bằng - Khách quan</h3>
+                        <p style="display: none;">
+                            Cung cấp trình tạo số random giúp các bạn lựa chọn một hoặc nhiều số một cách ngẫu nhiên công bằng và chính xác. </p>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <section id="quay">
+                        <div class="accordion cmn-accordion element-hungnh" id="accordionExample">
+                            <div class="select-number-area">
+                                <div id="loadingnha">
+                                    00
+                                </div>
+                                <div class="frm-group" style="padding-top: 30%">
+                                    <button id=" randomNumber" onclick="quay()">   Quay Số  </button>
+                                </div>
 
-            //         var number = document.getElementById("randomNumber");
-            //         number.textContent = Math.floor((Math.random() * 100) + 1);
+                                <div class="ToggleShow" style="display: none;">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <label for="chk3O"><input type="radio" id="chk3O" checked="checked" onchange="Chon3O()"> &nbsp; Chọn số</label>
+                                                </th>
+                                                <th>
+                                                    <label for="chk2O"> <input type="radio" id="chk2O" onchange="Chon2O()"> &nbsp; Nhập số </Label>
+                                                </th>
 
-            //     }
+                                            </tr>
+                                        </thead>
+                                    </table>
 
-            // }
+                                    <div id="dv3O">
+                                        <div class="frm-group" style="margin-top: 10px;">
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width: 32%; text-align  :left;"> Từ số </th>
+                                                        <th style="width: 32%;text-align: left;"> Đến số </th>
+                                                        <th style="width: 32%; text-align: left;"> Thời gian quay(giây) </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="text" value="1" id="true-random-integer-generator-min" placeholder="Số nhỏ nhất" onkeypress="return integerJsInputControl(event);">
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" value="100" id="true-random-integer-generator-max" placeholder="Số lớn nhất" onkeypress="return integerJsInputControl(event);">
+                                                        </td>
+                                                        <td style="width:30%">
+                                                            <select id="slTocDo" style="padding: 1px 1px 1px 23px; height: 23px; width: 100%; border-radius: 6px;"></select>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
 
-            console.log("Quang Huy - Chào mừng bạn đến giải thưởng quay số ngẫu nhiên")
+                                        <div class="frm-group" style="display:none">
+                                            <table>
+                                                <tbody>
+                                                    <tr>
+                                                        <td> Số lượng: </td>
+                                                        <td>
+                                                            <input type="text" value="1" id="SoLuongToiDa" placeholder="(tối đa 100 số)" onkeypress="return integerJsInputControl(event);">
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
 
-            var num1 = document.querySelector("#num1");
-            var num2 = document.querySelector("#num2");
-            var number = document.querySelector("#randomNumber");
-            let activeRolling = false;
-            let timer;
 
-            function generateRandom() {
-                setRightOrder(num1, num2);
-                if (activeRolling === false) {
-                    var randomNumber = randomNum(num1, num2);
-                    rollNumber(number.textContent, randomNumber);
-                } else {
-                    activeRolling = false;
-                    clearInterval(timer);
-                    var randomNumber = randomNum(num1, num2);
-                    rollNumber(number.textContent, randomNumber);
-                    console.info("true", 1);
-                }
-                var audio = new Audio('sm-spin.mp3');
-                audio.play();
-            }
+                                    </div>
+                                    <div id="div2O" style="display:none;padding-top:2%;padding-bottom:2%">
+                                        <div class="frm-group">
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width: 47%;text-align  :left;"> Nhập vào: </th>
+                                                        <th style="width: 47%;text-align  :left;"> Tốc độ:</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <textarea rows="10" id="txtareadayso" placeholder="Các số cách nhau dấu phẩy. VD: 01,34,78,89,90" style="resize:none; font-size: 13.5px;"></textarea>
+                                                        </td>
+                                                        <td>
+                                                            <select id="slTocDo2" style="padding: 1px 1px 1px 23px; height: 23px; width: 100%; border-radius: 6px;"></select>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="frm-group" style="display:none">
+                                            <table>
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="width: 80px;"> Số lượng: </td>
+                                                        <td>
+                                                            <input type="text" value="1" id="SoLuongToiDa2" placeholder="(Tối đa 100 số)" onkeypress="return integerJsInputControl(event);">
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </section>
+                    </div>
+                </div>
+            </div>
+    </section>
 
-            function randomNum(min, max) {
-                // var min = (parseInt(min.value));
-                // var max = (parseInt(max.value) + 1);
-                // var random = ((Math.floor(Math.random() * (max - min)) + min));
-                var random = Math.floor((Math.random() * 100) + 1)
-                return random;
-            }
-
-            function setRightOrder(num1, num2) {
-                const value1 = num1.value;
-                const value2 = num2.value;
-                if (value1 > value2) {
-                    num1.value = value2;
-                    num2.value = value1;
-                }
-            }
-
-            function rollNumber(number1, number2) {
-                start = parseInt(number1)
-                end = parseInt(number2);
-                var time = function(start, end) {
-                    dif = Math.abs(start - end);
-                    // console.info("start", start);
-                    // console.info("end", end);
-                    // console.info("dif", dif);
-
-                    if (dif < 10) {
-                        return 50;
-                    } else if (dif < 20) {
-                        return 40;
-                    } else if (dif < 50) {
-                        return 30;
-                    } else if (dif < 100) {
-                        return 20;
-                    } else if (dif < 500) {
-                        return 5;
-                    } else if (dif < 1000) {
-                        return 1;
-                    }
-                }
-
-                if (activeRolling === false) {
-                    activeRolling = true;
-                    if (start < end) {
-                        timer = setInterval(function() {
-                            if (start == end) {
-                                clearInterval(timer);
-                                activeRolling = false;
-                            }
-                            var dif = (Math.abs(start - end))
-                            if (dif > 100000) {
-                                start += (10000);
-                                number.textContent = start;
-                            } else if (dif > 100000) {
-                                start += (10000);
-                                number.textContent = start;
-                            } else if (dif > 10000) {
-                                start += (1000);
-                                number.textContent = start;
-                            } else if (dif > 1000) {
-                                start += (100);
-                                number.textContent = start;
-                            } else if (dif > 100) {
-                                start += (10);
-                                number.textContent = start;
-                            } else {
-                                number.textContent = start++;
-                            }
-                            console.info("start", start);
-                            console.info("textContent", 1);
-                        }, time(start, end));
-                    } else if (start > end) {
-                        timer = setInterval(function() {
-                            if (start == end) {
-                                clearInterval(timer);
-                                activeRolling = false;
-                            }
-                            var dif = (Math.abs(start - end))
-                            if (dif > 100000) {
-                                start -= (10000);
-                                number.textContent = start;
-                            } else if (dif > 100000) {
-                                start -= (10000);
-                                number.textContent = start;
-                            } else if (dif > 10000) {
-                                start -= (1000);
-                                number.textContent = start;
-                            } else if (dif > 1000) {
-                                start -= (100);
-                                number.textContent = start;
-                            } else if (dif > 100) {
-                                start -= (10);
-                                number.textContent = start;
-                            } else {
-                                number.textContent = start--;
-                            }
-                            console.info("textContent", 2);
-                        }, time(start, end));
-                    } else {
-                        number.textContent = start;
-                        activeRolling = false;
-                        console.info("textContent", 3);
-                    }
-                }
-            }
-
-            function setMax() {
-                if (parseInt(num1.value) > 100) {
-                    num1.value = 100;
-                }
-                if (parseInt(num2.value) > 100) {
-                    num2.value = 100;
-                }
-            }
-        </script>
+    <script src=" jquery-3.3.1.min.js"></script>
+    <script src="script.js "></script>
 </body>
-
 
 </html>
