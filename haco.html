@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HACO PHARMA - Quay số trúng thưởng</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <section style="position: fixed;bottom: 0; right: 0;">
+        <h1 id="h1Toggle" class="top-title" style="font-size: 10px;color: #d9a60c;">⚙</h1>
+    </section>
+    <section class="banner-section">
+        <div class="container">
+            <div class="row" style="margin-top: -8%;">
+                <div class="col-lg-5">
+                    <div class="banner-content" style="padding-bottom: 0px;">
+                        <h1 id="h1Toggle" class="top-title" style="font-size: 40px;color: #d9a60c; display: none;">Quay Số Ngẫu Nhiên</h1>
+                        <h3 class="title" style="font-size: 20px; display: none;">Công bằng - Khách quan</h3>
+                        <p style="display: none;">
+                            Cung cấp trình tạo số random giúp các bạn lựa chọn một hoặc nhiều số một cách ngẫu nhiên công bằng và chính xác. </p>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <section id="quay">
+                        <div class="accordion cmn-accordion element-hungnh" id="accordionExample">
+                            <div class="select-number-area">
+                                <div id="loadingnha">
+                                    00
+                                </div>
+                                <div class="frm-group" style="padding-top: 30%">
+                                    <button id=" randomNumber" onclick="quay()">   Quay Số  </button>
+                                </div>
+
+                                <div class="ToggleShow" style="display: none;">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <label for="chk3O"><input type="radio" id="chk3O" checked="checked" onchange="Chon3O()"> &nbsp; Chọn số</label>
+                                                </th>
+                                                <th>
+                                                    <label for="chk2O"> <input type="radio" id="chk2O" onchange="Chon2O()"> &nbsp; Nhập số </Label>
+                                                </th>
+
+                                            </tr>
+                                        </thead>
+                                    </table>
+
+                                    <div id="dv3O">
+                                        <div class="frm-group" style="margin-top: 10px;">
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width: 32%; text-align  :left;"> Từ số </th>
+                                                        <th style="width: 32%;text-align: left;"> Đến số </th>
+                                                        <th style="width: 32%; text-align: left;"> Thời gian quay(giây) </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="text" value="1" id="true-random-integer-generator-min" placeholder="Số nhỏ nhất" onkeypress="return integerJsInputControl(event);">
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" value="100" id="true-random-integer-generator-max" placeholder="Số lớn nhất" onkeypress="return integerJsInputControl(event);">
+                                                        </td>
+                                                        <td style="width:30%">
+                                                            <select id="slTocDo" style="padding: 1px 1px 1px 23px; height: 23px; width: 100%; border-radius: 6px;"></select>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="frm-group" style="display:none">
+                                            <table>
+                                                <tbody>
+                                                    <tr>
+                                                        <td> Số lượng: </td>
+                                                        <td>
+                                                            <input type="text" value="1" id="SoLuongToiDa" placeholder="(tối đa 100 số)" onkeypress="return integerJsInputControl(event);">
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+
+                                    </div>
+                                    <div id="div2O" style="display:none;padding-top:2%;padding-bottom:2%">
+                                        <div class="frm-group">
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width: 47%;text-align  :left;"> Nhập vào: </th>
+                                                        <th style="width: 47%;text-align  :left;"> Tốc độ:</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <textarea rows="10" id="txtareadayso" placeholder="Các số cách nhau dấu phẩy. VD: 01,34,78,89,90" style="resize:none; font-size: 13.5px;"></textarea>
+                                                        </td>
+                                                        <td>
+                                                            <select id="slTocDo2" style="padding: 1px 1px 1px 23px; height: 23px; width: 100%; border-radius: 6px;"></select>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="frm-group" style="display:none">
+                                            <table>
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="width: 80px;"> Số lượng: </td>
+                                                        <td>
+                                                            <input type="text" value="1" id="SoLuongToiDa2" placeholder="(Tối đa 100 số)" onkeypress="return integerJsInputControl(event);">
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </section>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <script src=" jquery-3.3.1.min.js"></script>
+    <script src="script.js "></script>
+</body>
+
+</html>
