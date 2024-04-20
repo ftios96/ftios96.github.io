@@ -65,3 +65,25 @@ p {
     display: inline-block;
     padding: 0;
 }
+
+#aQuay {
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+    color: white;
+    background-image: -webkit-linear-gradient( 90deg, #2f2f2f 0%, #000000 100%, rgb(0 0 0) 100%);
+}
+
+.highlight {
+    display: block;
+}
+
+#loadingnha {
+    font-weight: bold;
+    background-color: #ffffff;
+    color: red;
+    height: 100%;
+    font-size: 80px;
+    margin-top: 15px;
+    padding: 0px
+}
