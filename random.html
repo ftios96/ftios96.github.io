@@ -32,40 +32,76 @@
 
                                 <div class="ToggleShow" style="display: none;">
                                     <table>
-                                        <tbody>
+                                        <thead>
                                             <tr>
-                                                <td style="font-weight: bold;">
-                                                    <input type="radio" id="chk3O" checked="checked" onchange="Chon3O()"> &nbsp; Chọn số
-                                                </td>
-                                                <td style="text-align: left; font-weight: bold;"> <input type="radio" id="chk2O" onchange="Chon2O()"> &nbsp; Nhập số</td>
+                                                <th>
+                                                    <label for="chk3O"><input type="radio" id="chk3O" checked="checked" onchange="Chon3O()"> &nbsp; Chọn số</label>
+                                                </th>
+                                                <th>
+                                                    <label for="chk2O"> <input type="radio" id="chk2O" onchange="Chon2O()"> &nbsp; Nhập số </Label>
+                                                </th>
+
                                             </tr>
-                                        </tbody>
+                                        </thead>
                                     </table>
 
-
-                                    <div id="div2O" style="display:none;padding-top:2%;padding-bottom:2%">
-                                        <div class="frm-group">
+                                    <div id="dv3O">
+                                        <div class="frm-group" style="margin-top: 10px;">
                                             <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width: 32%; text-align  :left;"> Từ số </th>
+                                                        <th style="width: 32%;text-align: left;"> Đến số </th>
+                                                        <th style="width: 32%; text-align: left;"> Thời gian quay(giây) </th>
+                                                    </tr>
+                                                </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td style="width: 80px;"> Nhập vào: </td>
                                                         <td>
-                                                            <textarea id="txtareadayso" placeholder="Các số cách nhau dấu phẩy. VD: 01,34,78,89,90" style="resize:none; font-size: 13.5px;width: 90%;"></textarea>
+                                                            <input type="text" value="1" id="true-random-integer-generator-min" placeholder="Số nhỏ nhất" onkeypress="return integerJsInputControl(event);">
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" value="100" id="true-random-integer-generator-max" placeholder="Số lớn nhất" onkeypress="return integerJsInputControl(event);">
+                                                        </td>
+                                                        <td style="width:30%">
+                                                            <select id="slTocDo" style="padding: 1px 1px 1px 23px; height: 23px; width: 100%; border-radius: 6px;"></select>
                                                         </td>
                                                     </tr>
                                                 </tbody>
                                             </table>
                                         </div>
-                                        <div class="frm-group" style="padding-bottom:6%">
+
+                                        <div class="frm-group" style="display:none">
                                             <table>
                                                 <tbody>
                                                     <tr>
-                                                        <td style="width:23%"> Tốc độ: </td>
-                                                        <td style="width:20%">
-                                                            <select id="slTocDo2" style="padding: 1px 1px 1px 23px; height: 40px; width: 100%; border-radius: 6px;"></select>
+                                                        <td> Số lượng: </td>
+                                                        <td>
+                                                            <input type="text" value="1" id="SoLuongToiDa" placeholder="(tối đa 100 số)" onkeypress="return integerJsInputControl(event);">
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+
+                                    </div>
+                                    <div id="div2O" style="display:none;padding-top:2%;padding-bottom:2%">
+                                        <div class="frm-group">
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width: 47%;text-align  :left;"> Nhập vào: </th>
+                                                        <th style="width: 47%;text-align  :left;"> Tốc độ:</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <textarea rows="10" id="txtareadayso" placeholder="Các số cách nhau dấu phẩy. VD: 01,34,78,89,90" style="resize:none; font-size: 13.5px;"></textarea>
                                                         </td>
                                                         <td>
-                                                            &nbsp;giây
+                                                            <select id="slTocDo2" style="padding: 1px 1px 1px 23px; height: 23px; width: 100%; border-radius: 6px;"></select>
                                                         </td>
                                                     </tr>
                                                 </tbody>
@@ -78,53 +114,6 @@
                                                         <td style="width: 80px;"> Số lượng: </td>
                                                         <td>
                                                             <input type="text" value="1" id="SoLuongToiDa2" placeholder="(Tối đa 100 số)" onkeypress="return integerJsInputControl(event);">
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <div id="dv3O">
-                                        <div class="frm-group" style="margin-top: 10px;">
-                                            <table>
-                                                <tbody>
-                                                    <tr>
-
-                                                        <td>
-                                                            Từ số: <br/>
-                                                            <input type="text" value="1" id="true-random-integer-generator-min" placeholder="Số nhỏ nhất" onkeypress="return integerJsInputControl(event);" style="width: 115px;">
-                                                        </td>
-                                                        <td>
-                                                            Đến số: <br />
-                                                            <input type="text" value="100" id="true-random-integer-generator-max" placeholder="Số lớn nhất" onkeypress="return integerJsInputControl(event);" style="width: 115px;">
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-
-                                        <div class="frm-group">
-                                            <table>
-                                                <tbody>
-                                                    <tr>
-                                                        <td style="width: 115px;"> Thời gian quay: </td>
-                                                        <td style="width:30%">
-                                                            <select id="slTocDo" style="padding: 1px 1px 1px 23px; height: 40px; width: 100%; border-radius: 6px;"></select>
-                                                        </td>
-                                                        <td>
-                                                            &nbsp;giây
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="frm-group" style="display:none">
-                                            <table>
-                                                <tbody>
-                                                    <tr>
-                                                        <td> Số lượng: </td>
-                                                        <td>
-                                                            <input type="text" value="1" id="SoLuongToiDa" placeholder="(tối đa 100 số)" onkeypress="return integerJsInputControl(event);">
                                                         </td>
                                                     </tr>
                                                 </tbody>
